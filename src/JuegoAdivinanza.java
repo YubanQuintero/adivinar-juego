@@ -9,10 +9,12 @@ public class JuegoAdivinanza {
         Scanner scanner = new Scanner(System.in);
         int intentos = 0;
 
+        final int MAXINTENTOS = 10;
+
 
         System.out.println("Adivina el número entre 1 y " + 100 + "Tienes 10 intentos");
 
-        while (intentos < 10) {
+        while (intentos < MAXINTENTOS) {
             System.out.print("Intento " + (intentos + 1) + ": ");
             int adivinanza = scanner.nextInt();
             intentos++;
@@ -26,12 +28,10 @@ public class JuegoAdivinanza {
                 System.out.println("El número es menor.");
             }
 
-            if (intentos == 10) {
+            if (intentos == MAXINTENTOS) {
                 System.out.println("Se acabaron los intentos. El número era " + numeroSecreto);
-                System.out.println("El número secreto era: " + numeroSecreto);
             }
         }
-
         scanner.close();
     }
 }
